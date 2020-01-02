@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Ludo</string>
+    <string name="roll_dice">Ghurao</string>
+    <string name="backgroundDice">backgroundDice</string>
+    <string name="CholoLudoKheli">Cholo ludo kheli</string>
+    <string name="right_dice_will_work">right dice will work</string>
+    <string name="left_dice_will_work">left dice will work</string>
+</resources>

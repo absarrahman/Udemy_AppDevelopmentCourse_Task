@@ -1,0 +1,4 @@
+#Wed Dec 18 22:15:24 BDT 2019
+base.0=D\:\\Projects\\Ludo\\app\\build\\intermediates\\dex\\release\\out\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
