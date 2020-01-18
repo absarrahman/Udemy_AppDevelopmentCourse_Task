@@ -48,6 +48,13 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        if(savedInstanceState != null){
+            mScore = savedInstanceState.getInt("Score");
+            mQuestionNumber = savedInstanceState.getInt("QuestionTrack");
+        } else {
+            mScore = mQuestionNumber = 0;
+        }
+
         mButtonTrue = findViewById(R.id.true_button);
         mButtonFalse = findViewById(R.id.false_button);
         mQuestionTextView = findViewById(R.id.question_text_view);
@@ -56,6 +63,7 @@ public class MainActivity extends Activity {
 
         mQuestion = mQuestionBank[mQuestionNumber].getQuestion();
         mQuestionTextView.setText(mQuestion);
+        mScoreTextView.setText("Score is " + mScore + "/" +mQuestionBank.length);
 
         mButtonTrue.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -109,5 +117,13 @@ public class MainActivity extends Activity {
         } else {
             Toast.makeText(getApplicationContext(),R.string.incorrect_toast,Toast.LENGTH_SHORT).show();
         }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) { //Saves the state of the app even after screen rotating
+        super.onSaveInstanceState(outState);
+
+        outState.putInt("Score",mScore);
+        outState.putInt("QuestionTrack",mQuestionNumber);
     }
 }
